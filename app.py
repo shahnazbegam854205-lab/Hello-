@@ -10,6 +10,10 @@ CORS(app)
 def home():
     return send_file('index.html')
 
+@app.route('/autoplay.mp3')
+def serve_music():
+    return send_file('autoplay.mp3', mimetype='audio/mpeg')
+
 @app.route('/api/vehicle/<vehicle_number>')
 def get_vehicle_info(vehicle_number):
     try:
